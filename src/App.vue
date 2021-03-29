@@ -1,10 +1,18 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
+  <section class="flex flex-col md:flex-row bg-black">
+    <the-sidebar />
+    <router-view />
+  </section>
 </template>
+
+<script>
+import TheSidebar from "@/components/TheSidebar.vue";
+export default {
+  components: {
+    TheSidebar,
+  },
+};
+</script>
 
 <style lang="scss">
 #app {
