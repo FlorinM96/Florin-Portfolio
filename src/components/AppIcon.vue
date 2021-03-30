@@ -1,18 +1,35 @@
 <template>
-  <component
-    :is="require(`@/assets/icons/${icon}.svg`).default"
-    v-bind="$props"
-    fill="#fff"
-  />
+  <component :is="icon" />
 </template>
 
 <script>
-export default {
+import { defineAsyncComponent, defineComponent } from "vue";
+
+let components = {};
+let iconNames = [];
+const requireComponent = require.context("../assets/icons", true, /\w+\.svg$/);
+
+iconNames.push(
+  requireComponent.keys().map((file) => file.replace(/(^.\/)|(\.svg$)/g, ""))
+);
+iconNames.forEach((icon) => {
+  //component represents the component name
+  components[icon] = defineAsyncComponent(() =>
+    //import each component dynamically
+    import("@/assets/icons/" + icon + ".svg")
+  );
+});
+
+export default defineComponent({
+  components,
   props: {
     icon: {
       type: String,
       required: true,
     },
   },
-};
+  data: () => ({
+    icons: iconNames,
+  }),
+});
 </script>
