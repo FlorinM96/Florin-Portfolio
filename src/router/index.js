@@ -1,5 +1,5 @@
-import { createRouter, createWebHashHistory } from "vue-router";
-import Home from "../views/Home.vue";
+import { createRouter, createWebHistory } from "vue-router";
+import Home from "../views";
 
 const routes = [
   {
@@ -7,15 +7,30 @@ const routes = [
     name: "Home",
     component: Home,
   },
-  // {
-  //   path: "/about",
-  //   name: "About",
-  //   component: () => import("../views/About.vue"),
-  // },
+  {
+    path: "/about",
+    name: "About",
+    component: () => import("../views/About.vue"),
+  },
+  {
+    path: "/projects",
+    name: "Projects",
+    component: () => import("../views/About.vue"),
+  },
+  {
+    path: "/education",
+    name: "Education",
+    component: () => import("../views/About.vue"),
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    component: () => import("../views/About.vue"),
+  },
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 

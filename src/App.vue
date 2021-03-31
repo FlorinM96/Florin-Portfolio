@@ -1,38 +1,29 @@
 <template>
-  <section class="flex flex-col md:flex-row bg-black">
-    <the-sidebar />
-    <router-view />
-  </section>
+  <component :is="layout" />
 </template>
 
 <script>
-import TheSidebar from "@/components/TheSidebar.vue";
+import DefaultLayout from "@/layouts";
 export default {
+  computed: {
+    layout() {
+      return this.$router.currentRoute.value.meta.layout || "default-layout";
+    },
+  },
   components: {
-    TheSidebar,
+    DefaultLayout,
   },
 };
 </script>
 
 <style lang="scss">
+//  roboto
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+//  roboto mono
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap");
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+  font-family: "Roboto", sans-serif;
+  color: $white;
+  background-color: $bg-black;
 }
 </style>

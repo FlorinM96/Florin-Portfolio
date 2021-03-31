@@ -9,7 +9,12 @@ module.exports = {
       .loader("vue-loader-v16") // or `` if you are using a preview support of Vue 3 in Vue CLI
       .end()
       .use("vue-svg-loader")
-      .loader("vue-svg-loader");
+      .loader("vue-svg-loader")
+      .options({
+        svgo: {
+          plugins: [{ mergePaths: false }, { removeViewBox: false }],
+        },
+      });
   },
   css: {
     loaderOptions: {
