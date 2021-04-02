@@ -1,12 +1,12 @@
 <template>
   <div
-    class="the-header flex justify-end align-center md:px-16 md:py-8 lg:px-24 lg:py-16 xxxl:px-32 xxxl:py-24"
+    class="the-header flex justify-end items-center md:px-16 lg:px-24 xxxl:px-32 xxxl:py-24 py-4 md:py-8 md:h-24 lg:h-32 xxxl:h-48"
   >
     <router-link
       v-for="(route, i) in routes"
       :key="i"
       :to="route.to"
-      class="router-link p-2 lg:px-4 lg:py-2 lg:ml-8 opacity-70 hover:opacity-100"
+      class="router-link px-2 lg:px-4 lg:ml-8 opacity-70 hover:opacity-100"
       :class="{ 'opacity-100	': $route.name === route.name }"
     >
       {{ route.name }}
@@ -39,4 +39,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.the-header {
+  border-bottom: 1px solid $white-opacity;
+}
+</style>

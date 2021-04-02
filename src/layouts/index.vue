@@ -2,7 +2,7 @@
   <section class="flex flex-col md:flex-row">
     <the-sidebar />
     <section class="main">
-      <the-header />
+      <the-header v-if="$mq === 'desktop'" />
       <router-view />
     </section>
   </section>
