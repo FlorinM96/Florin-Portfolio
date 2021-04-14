@@ -1,9 +1,71 @@
 //  roboto
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
-//  roboto mono
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap");
+//  montserrat
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
 html {
   font-family: "Roboto", sans-serif;
   color: $white;
   background-color: $bg-black;
+}
+// heading
+.font-heading-s {
+  font-family: Montserrat;
+  font-size: 24px;
+  letter-spacing: 0;
+}
+.font-heading-m {
+  font-family: Montserrat;
+  font-size: 34px;
+  letter-spacing: 0.25px;
+}
+.font-heading-l {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-size: 61px;
+  letter-spacing: -0.5px;
+}
+.font-heading-xl {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-size: 97px;
+  letter-spacing: -1.5px;
+}
+// subtitle
+.font-subtitle-s {
+  font-family: ;
+  font-weight: ;
+  font-size: ;
+  letter-spacing: ;
+}
+.font-subtitle-m {
+  font-family: ;
+  font-weight: ;
+  font-size: ;
+  letter-spacing: ;
+}
+.font-subtitle-l {
+  font-family: ;
+  font-weight: ;
+  font-size: ;
+  letter-spacing: ;
+}
+// paragraph
+.font-paragraph-s {
+  font-family: ;
+  font-weight: ;
+  font-size: ;
+  letter-spacing: ;
+}
+.font-paragraph-m {
+  font-family: ;
+  font-weight: ;
+  font-size: ;
+  letter-spacing: ;
+}
+.font-paragraph-l {
+  font-family: ;
+  font-weight: ;
+  font-size: ;
+  letter-spacing: ;
 }

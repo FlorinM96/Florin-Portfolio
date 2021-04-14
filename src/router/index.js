@@ -32,6 +32,7 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  linkExactActiveClass: "active",
 });
 
 const DEFAULT_TITLE = "Florin Mihalcea - frontend developer";
