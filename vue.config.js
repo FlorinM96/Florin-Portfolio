@@ -22,7 +22,6 @@ module.exports = {
         prependData: `
           @import "@/assets/styles/variables.scss";
           @import "@/assets/styles/globals.scss";
-          @import "@/assets/styles/fonts.scss";
         `,
       },
     },

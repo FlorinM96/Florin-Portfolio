@@ -8,67 +8,8 @@ html {
   color: $white;
   background-color: $bg-black;
 }
-// heading
-.font-heading-s {
-  font-family: Montserrat;
-  font-size: 24px;
-  letter-spacing: 0;
-}
-.font-heading-m {
-  font-family: Montserrat;
-  font-size: 34px;
-  letter-spacing: 0.25px;
-}
-.font-heading-l {
-  font-family: Montserrat;
-  font-weight: 300;
-  font-size: 61px;
-  letter-spacing: -0.5px;
-}
-.font-heading-xl {
-  font-family: Montserrat;
-  font-weight: 300;
-  font-size: 97px;
-  letter-spacing: -1.5px;
-}
-// subtitle
-.font-subtitle-s {
-  font-family: 1;
-  font-weight: 1;
-  font-size: 1;
-  letter-spacing: 1;
-}
-.font-subtitle-m {
-  font-family: 1;
-  font-weight: 1;
-  font-size: 1;
-  letter-spacing: 1;
-}
-.font-subtitle-l {
-  font-family: 1;
-  font-weight: 1;
-  font-size: 1;
-  letter-spacing: 1;
-}
-// paragraph
-.font-paragraph-s {
-  font-family: 1;
-  font-weight: 1;
-  font-size: 1;
-  letter-spacing: 1;
-}
-.font-paragraph-m {
-  font-family: 1;
-  font-weight: 1;
-  font-size: 1;
-  letter-spacing: 1;
-}
-.font-paragraph-l {
-  font-family: 1;
-  font-weight: 1;
-  font-size: 1;
-  letter-spacing: 1;
-}
+
+//  transitions
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.25s;

@@ -1,3 +1,65 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  @variants responsive {
+    .font-heading-s {
+      font-family: Montserrat;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+    .font-heading-m {
+      font-family: Montserrat;
+      font-size: 34px;
+      letter-spacing: 0.25px;
+    }
+    .font-heading-l {
+      font-family: Montserrat;
+      font-weight: 300;
+      font-size: 61px;
+      letter-spacing: -0.5px;
+    }
+    .font-heading-xl {
+      font-family: Montserrat;
+      font-weight: 300;
+      font-size: 97px;
+      letter-spacing: -1.5px;
+    }
+
+    .font-subtitle-s {
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.15px;
+    }
+    .font-subtitle-m {
+      font-size: 16px;
+      letter-spacing: 0.1px;
+    }
+
+    .font-paragraph-s {
+      font-size: 16px;
+      letter-spacing: 0.5px;
+    }
+    .font-paragraph-m {
+      font-size: 14px;
+      letter-spacing: 0.25px;
+    }
+    .font-button {
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 1.25px;
+      text-transform: uppercase;
+    }
+    .font-caption {
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.4px;
+    }
+    .font-overline {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+  }
+}
