@@ -33,39 +33,47 @@ html {
 }
 // subtitle
 .font-subtitle-s {
-  font-family: ;
-  font-weight: ;
-  font-size: ;
-  letter-spacing: ;
+  font-family: 1;
+  font-weight: 1;
+  font-size: 1;
+  letter-spacing: 1;
 }
 .font-subtitle-m {
-  font-family: ;
-  font-weight: ;
-  font-size: ;
-  letter-spacing: ;
+  font-family: 1;
+  font-weight: 1;
+  font-size: 1;
+  letter-spacing: 1;
 }
 .font-subtitle-l {
-  font-family: ;
-  font-weight: ;
-  font-size: ;
-  letter-spacing: ;
+  font-family: 1;
+  font-weight: 1;
+  font-size: 1;
+  letter-spacing: 1;
 }
 // paragraph
 .font-paragraph-s {
-  font-family: ;
-  font-weight: ;
-  font-size: ;
-  letter-spacing: ;
+  font-family: 1;
+  font-weight: 1;
+  font-size: 1;
+  letter-spacing: 1;
 }
 .font-paragraph-m {
-  font-family: ;
-  font-weight: ;
-  font-size: ;
-  letter-spacing: ;
+  font-family: 1;
+  font-weight: 1;
+  font-size: 1;
+  letter-spacing: 1;
 }
 .font-paragraph-l {
-  font-family: ;
-  font-weight: ;
-  font-size: ;
-  letter-spacing: ;
+  font-family: 1;
+  font-weight: 1;
+  font-size: 1;
+  letter-spacing: 1;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
