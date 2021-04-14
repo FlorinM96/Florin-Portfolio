@@ -1,6 +1,8 @@
 <template>
   <div :style="lineStyle" class="line">
-    <div class="relative w-full h-full"><div ref="tracker" :style="trackerStyle" class="tracker" /></div>
+    <div class="relative w-full h-full">
+      <div ref="tracker" :style="trackerStyle" class="tracker" />
+    </div>
   </div>
 </template>
 
@@ -101,7 +103,11 @@ export default {
         toValues.right = 0;
       }
 
-      this.trackerAnimation = gsap.fromTo(this.$refs.tracker, fromValues, toValues);
+      this.trackerAnimation = gsap.fromTo(
+        this.$refs.tracker,
+        fromValues,
+        toValues
+      );
     },
   },
 };
