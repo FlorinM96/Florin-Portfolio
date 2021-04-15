@@ -54,7 +54,7 @@ export default {
     ...mapMutations(["toggleMenuState"]),
     toggleMenu() {
       gsap.to(this.$refs.menu, {
-        duration: 0.5,
+        duration: 0.75,
         x: this.isMenuOpened ? 0 : "-100%",
         ease: "power2.in",
       });
