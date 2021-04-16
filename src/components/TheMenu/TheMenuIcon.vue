@@ -60,9 +60,9 @@ export default {
       bot: this.$refs.bot,
     };
     this.loadTween = new gsap.timeline({ paused: true, reversed: false })
-      .to(lines.top, 0.5, { strokeDashoffset: 14, ease: "Power2.InOut" }, 0)
-      .to(lines.mid, 0.5, { strokeDashoffset: 0, ease: "Power2.InOut" }, 0.2)
-      .to(lines.bot, 0.5, { strokeDashoffset: 9, ease: "Power2.InOut" }, 0.5);
+      .to(lines.top, 0.25, { strokeDashoffset: -14, ease: "Power2.InOut" }, 0)
+      .to(lines.mid, 0.25, { strokeDashoffset: 0, ease: "Power2.InOut" }, 0.1)
+      .to(lines.bot, 0.25, { strokeDashoffset: -9, ease: "Power2.InOut" }, 0.2);
 
     this.clickAnimation = new gsap.timeline({ paused: true, reversed: true })
       .to(lines.top, 0.1, { y: 10, ease: "Power2.InOut" })
@@ -102,10 +102,9 @@ export default {
   }
 }
 .line {
-  stroke-dashoffset: 30px;
+  stroke-dashoffset: -30px;
 }
 .button-icon {
-  margin: 0.8rem;
   flex-shrink: 0;
 }
 .button-icon-stroke {

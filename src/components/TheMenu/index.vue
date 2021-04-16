@@ -1,13 +1,13 @@
 <template>
   <div
     ref="menu"
-    class="themenu fixed inset-0 transform -translate-x-full z-10 flex flex-col justify-center w-screen min-w-full h-screen min-h-full md:pl-24 lg:pl-32 xxxl:pl-48"
+    class="themenu fixed inset-0 transform translate-x-full px-6 md:-translate-x-full z-10 flex flex-col justify-center items-end md:items-start w-screen min-w-full h-screen min-h-full md:pl-24 lg:pl-32 xxxl:pl-48"
   >
     <router-link
       v-for="(route, i) in routes"
       :key="i"
       :to="route.to"
-      class="router-link px-2 lg:px-4 lg:ml-8 opacity-70 hover:opacity-100 md:font-heading-l"
+      class="router-link font-heading-s px-2 lg:px-4 lg:ml-8 opacity-70 hover:opacity-100 md:font-heading-l"
       :class="{ 'opacity-100	': $route.name === route.name }"
     >
       <span @click="toggleMenuState"> {{ route.name }} </span>
@@ -41,7 +41,8 @@ export default {
   }),
   watch: {
     isMenuOpened(newVal, oldVal) {
-      if (newVal !== oldVal) this.toggleMenu();
+      if (newVal !== oldVal)
+        newVal ? this.toggleMenu.play() : this.toggleMenu.reverse();
     },
     $route() {
       if (this.isMenuOpened) this.toggleMenuState();
@@ -50,15 +51,16 @@ export default {
   computed: {
     ...mapState(["isMenuOpened"]),
   },
+  mounted() {
+    this.toggleMenu = gsap.to(this.$refs.menu, {
+      duration: 0.75,
+      x: 0,
+      ease: "power2.in",
+      paused: true,
+    });
+  },
   methods: {
     ...mapMutations(["toggleMenuState"]),
-    toggleMenu() {
-      gsap.to(this.$refs.menu, {
-        duration: 0.75,
-        x: this.isMenuOpened ? 0 : "-100%",
-        ease: "power2.in",
-      });
-    },
   },
 };
 </script>

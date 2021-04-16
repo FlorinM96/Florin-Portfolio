@@ -4,28 +4,28 @@ import Home from "../views";
 const routes = [
   {
     path: "/",
-    name: "Home",
+    name: "home",
     component: Home,
   },
   {
     path: "/about",
-    name: "About",
+    name: "about",
     component: () => import("../views/About.vue"),
   },
   {
     path: "/projects",
-    name: "Projects",
-    component: () => import("../views/About.vue"),
+    name: "projects",
+    component: () => import("../views/Projects.vue"),
   },
   {
     path: "/education",
-    name: "Education",
-    component: () => import("../views/About.vue"),
+    name: "education",
+    component: () => import("../views/Education.vue"),
   },
   {
     path: "/contact",
-    name: "Contact",
-    component: () => import("../views/About.vue"),
+    name: "contact",
+    component: () => import("../views/Contact.vue"),
   },
 ];
 
@@ -41,6 +41,7 @@ router.afterEach((to) => {
   // Use next tick to handle router history correctly
   // see: https://github.com/vuejs/vue-router/issues/914#issuecomment-384477609
   document.title = to.meta.title || DEFAULT_TITLE;
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 export default router;

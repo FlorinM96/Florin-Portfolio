@@ -1,5 +1,5 @@
 <template>
-  <component :is="icon" />
+  <component :is="icon" v-bind="$props" />
 </template>
 
 <script>
@@ -9,9 +9,9 @@ let components = {};
 let iconNames = [];
 const requireComponent = require.context("../assets/icons", true, /\w+\.svg$/);
 
-iconNames.push(
-  requireComponent.keys().map((file) => file.replace(/(^.\/)|(\.svg$)/g, ""))
-);
+iconNames = requireComponent
+  .keys()
+  .map((file) => file.replace(/(^.\/)|(\.svg$)/g, ""));
 iconNames.forEach((icon) => {
   //component represents the component name
   components[icon] = defineAsyncComponent(() =>
@@ -28,8 +28,5 @@ export default defineComponent({
       required: true,
     },
   },
-  data: () => ({
-    icons: iconNames,
-  }),
 });
 </script>

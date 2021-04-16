@@ -1,19 +1,69 @@
 <template>
-  <div
-    v-if="!to"
-    class="button-rectangle inverted"
-    :class="`text-${size}`"
-    @click="$emit('click')"
-  >
-    <span class="button-outline-copy"> {{ text }} </span>
-    <span class="button-outline-bottom"></span>
-  </div>
-  <router-link v-else :to="to" class="router-link">
-    <div :class="`text-${size}`" class="button-rectangle inverted">
+  <template v-if="type === 'rectangle'">
+    <div
+      v-if="!to"
+      class="button-rectangle inverted"
+      :class="`text-${size}`"
+      @click="$emit('click')"
+    >
       <span class="button-outline-copy"> {{ text }} </span>
       <span class="button-outline-bottom"></span>
     </div>
-  </router-link>
+    <router-link v-else :to="to" class="router-link">
+      <div :class="`text-${size}`" class="button-rectangle inverted">
+        <span class="button-outline-copy"> {{ text }} </span>
+        <span class="button-outline-bottom"></span>
+      </div>
+    </router-link>
+  </template>
+  <template v-else>
+    <div v-if="!to" class="button-circle inverted" @click="$emit('click')">
+      <svg
+        class="circle-svg button-icon-outline"
+        width="100px"
+        height="100px"
+        viewBox="0 0 100 100"
+      >
+        <circle
+          class="circle"
+          cx="50"
+          cy="50"
+          r="48.8"
+          fill="none"
+          stroke="white"
+          stroke-width="1.2"
+          vector-effect="non-scaling-stroke"
+        ></circle>
+      </svg>
+      <span v-if="text" class="text">
+        {{ text }}
+      </span>
+      <app-icon v-else-if="icon" :icon="icon" />
+    </div>
+    <router-link v-else :to="to" class="button-circle inverted router-link">
+      <svg
+        class="circle-svg button-icon-outline"
+        width="100px"
+        height="100px"
+        viewBox="0 0 100 100"
+      >
+        <circle
+          class="circle"
+          cx="50"
+          cy="50"
+          r="48.8"
+          fill="none"
+          stroke="white"
+          stroke-width="1.2"
+          vector-effect="non-scaling-stroke"
+        ></circle>
+      </svg>
+      <span v-if="text" class="text">
+        {{ text }}
+      </span>
+      <app-icon v-else-if="icon" :icon="icon" class="icon" />
+    </router-link>
+  </template>
 </template>
 
 <script>
@@ -25,11 +75,22 @@ export default {
     },
     text: {
       type: String,
-      required: true,
+      default: undefined,
     },
     size: {
       type: String,
       default: "sm",
+    },
+    type: {
+      type: String,
+      default: "rectangle",
+      validator: (value) => {
+        return ["rectangle", "circle"].indexOf(value) !== -1;
+      },
+    },
+    icon: {
+      type: String,
+      default: undefined,
     },
   },
 };
@@ -114,6 +175,41 @@ export default {
         background: $white;
       }
     }
+  }
+}
+.button-circle {
+  position: relative;
+  display: inline-block;
+  background: transparent;
+  padding: 0;
+  z-index: 0;
+  display: block;
+  height: 4rem;
+  width: 4rem;
+  opacity: 1 !important;
+  .circle-svg {
+    height: 100%;
+    width: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+  .circle {
+    stroke-dasharray: 80 15;
+    stroke-dashoffset: 26;
+    stroke-width: 2px;
+    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  &:hover .circle {
+    stroke-dashoffset: 111;
+  }
+  .text,
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 </style>

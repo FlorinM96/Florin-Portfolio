@@ -9,7 +9,10 @@
       <app-icon icon="logo" class="h-2/4 w-auto md:w-1/2 md:h-auto" />
     </router-link>
     <transition name="fade">
-      <the-menu-icon v-if="showMenuButton" class="" />
+      <the-menu-icon
+        v-if="showMenuButton"
+        class="transform scale-75 md:scale-100 origin-right"
+      />
     </transition>
     <div
       v-if="$mq === 'desktop'"
