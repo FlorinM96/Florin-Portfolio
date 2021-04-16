@@ -47,7 +47,7 @@ export default {
   padding: 0 16px 0 0;
 }
 .cta-icon {
-  background: $bg-black;
+  background-color: $bg-black;
   border-radius: 50%;
 }
 </style>

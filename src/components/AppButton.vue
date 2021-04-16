@@ -180,7 +180,6 @@ export default {
 .button-circle {
   position: relative;
   display: inline-block;
-  background: transparent;
   padding: 0;
   z-index: 0;
   display: block;
