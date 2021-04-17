@@ -16,7 +16,7 @@ export function createBackgroundContext(container) {
     const complementaryColor = new THREE.Color("#1a1a1a");
 
     ctx.renderer.setPixelRatio(window.devicePixelRatio);
-    ctx.renderer.setSize(window.innerWidth, window.innerHeight);
+    ctx.renderer.setSize(window.innerWidth * 1.25, window.innerHeight * 1.25);
     const style = ctx.renderer.domElement.style;
     style.position = "fixed";
     style.zIndex = -1;
