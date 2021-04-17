@@ -5,21 +5,12 @@
     <section class="main">
       <the-header v-if="$mq === 'desktop'" />
       <section class="p-6 md:p-8">
-        <router-view />
+        <router-view v-slot="{ Component }">
+          <transition name="fade" mode="out-in">
+            <component :is="Component"></component>
+          </transition>
+        </router-view>
       </section>
-      <div
-        v-if="$route.name !== 'contact' && $mq !== 'mobile'"
-        class="cta cursor-pointer fixed bottom-10 right-10 flex items-center"
-        @click="$router.push('/contact')"
-      >
-        <span class="cta-text">Let's talk!</span>
-        <app-button
-          to="/contact"
-          type="circle"
-          icon="message"
-          class="cta-icon"
-        />
-      </div>
     </section>
   </section>
 </template>
@@ -28,13 +19,11 @@
 import TheSidebar from "@/components/TheSidebar.vue";
 import TheHeader from "@/components/TheHeader.vue";
 import TheMenu from "@/components/TheMenu";
-import AppButton from "../components/AppButton.vue";
 export default {
   components: {
     TheSidebar,
     TheHeader,
     TheMenu,
-    AppButton,
   },
 };
 </script>
@@ -45,9 +34,5 @@ export default {
 }
 .cta-text {
   padding: 0 16px 0 0;
-}
-.cta-icon {
-  background-color: $bg-black;
-  border-radius: 50%;
 }
 </style>

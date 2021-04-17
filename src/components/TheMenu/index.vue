@@ -70,8 +70,13 @@ export default {
   background-color: $bg-black;
 }
 .router-link {
+  transition: all 0.25s;
   &.active {
     opacity: 1;
+  }
+  &:hover {
+    opacity: 1;
+    transform: translateX(5%);
   }
 }
 </style>

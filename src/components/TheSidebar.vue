@@ -14,13 +14,22 @@
         class="transform scale-75 md:scale-100 origin-right"
       />
     </transition>
-    <div
-      v-if="$mq === 'desktop'"
-      class="w-full h-12 pt-px text-sm leading-relaxed tracking-wider whitespace-nowrap transform -rotate-90 xxxl:h-16 text-secondary-text mb-24"
-    >
-      Florin Mihalcea
-      <br />
-      Front-end developer
+    <div class="flex flex-col items-center mb-8">
+      <div
+        v-if="$mq === 'desktop'"
+        class="w-full h-12 pt-px text-sm leading-relaxed tracking-wider whitespace-nowrap transform -rotate-90 xxxl:h-16 text-secondary-text mb-20"
+      >
+        Florin Mihalcea
+        <br />
+        Front-end developer
+      </div>
+      <app-button
+        to="/contact"
+        type="circle"
+        icon="message"
+        class="cta-icon"
+        title="Let's talk"
+      />
     </div>
     <app-line-tracker
       :position="$mq !== 'desktop' ? 'bottom' : 'right'"
@@ -33,10 +42,13 @@
 import debounce from "lodash/debounce";
 import AppLineTracker from "@/components/AppLineTracker";
 import TheMenuIcon from "@/components/TheMenu/TheMenuIcon";
+import AppButton from "../components/AppButton.vue";
+
 export default {
   components: {
     AppLineTracker,
     TheMenuIcon,
+    AppButton,
   },
   data: () => ({
     isUserScrolling: false,
