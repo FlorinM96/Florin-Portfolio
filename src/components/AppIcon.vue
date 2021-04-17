@@ -1,5 +1,5 @@
 <template>
-  <component :is="icon" v-bind="$props" />
+  <component :is="icon" v-bind="$props" class="app-icon" />
 </template>
 
 <script>

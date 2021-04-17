@@ -1,5 +1,23 @@
 $white: #fff;
+$white-primary: #dbdbdb;
 $black: #000000;
 $bg-black: #14181a;
 
 $white-opacity: rgba(#fff, 0.2);
+
+@mixin tablet {
+  @media screen and (min-width: 720px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (min-width: 1020px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: 1400px) {
+    @content;
+  }
+}

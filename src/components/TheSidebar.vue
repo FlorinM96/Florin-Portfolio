@@ -14,9 +14,8 @@
         class="transform scale-75 md:scale-100 origin-right"
       />
     </transition>
-    <div class="flex flex-col items-center mb-8">
+    <div v-if="$mq === 'desktop'" class="flex flex-col items-center mb-8">
       <div
-        v-if="$mq === 'desktop'"
         class="w-full h-12 pt-px text-sm leading-relaxed tracking-wider whitespace-nowrap transform -rotate-90 xxxl:h-16 text-secondary-text mb-20"
       >
         Florin Mihalcea
@@ -24,10 +23,10 @@
         Front-end developer
       </div>
       <app-button
+        v-if="$route.name !== 'contact'"
         to="/contact"
         type="circle"
         icon="message"
-        class="cta-icon"
         title="Let's talk"
       />
     </div>

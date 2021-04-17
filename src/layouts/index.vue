@@ -11,6 +11,7 @@
           </transition>
         </router-view>
       </section>
+      <the-footer />
     </section>
   </section>
 </template>
@@ -19,11 +20,13 @@
 import TheSidebar from "@/components/TheSidebar.vue";
 import TheHeader from "@/components/TheHeader.vue";
 import TheMenu from "@/components/TheMenu";
+import TheFooter from "@/components/TheFooter";
 export default {
   components: {
     TheSidebar,
     TheHeader,
     TheMenu,
+    TheFooter,
   },
 };
 </script>

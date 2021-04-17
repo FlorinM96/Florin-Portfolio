@@ -17,20 +17,19 @@
     </router-link>
   </template>
   <template v-else>
-    <div v-if="!to" class="button-circle inverted" @click="$emit('click')">
-      <svg
-        class="circle-svg button-icon-outline"
-        width="100px"
-        height="100px"
-        viewBox="0 0 100 100"
-      >
+    <div
+      v-if="!to"
+      class="button-circle inverted w-8 h-8 md:w-16 md:h-16"
+      @click="$emit('click')"
+    >
+      <svg class="circle-svg button-icon-outline" viewBox="0 0 100 100">
         <circle
           class="circle"
           cx="50"
           cy="50"
-          r="48.8"
+          r="47"
           fill="none"
-          stroke="white"
+          stroke="#dbdbdb"
           stroke-width="1.2"
           vector-effect="non-scaling-stroke"
         ></circle>
@@ -38,22 +37,21 @@
       <span v-if="text" class="text">
         {{ text }}
       </span>
-      <app-icon v-else-if="icon" :icon="icon" />
+      <app-icon v-else-if="icon" :icon="icon" class="icon" />
     </div>
-    <router-link v-else :to="to" class="button-circle inverted router-link">
-      <svg
-        class="circle-svg button-icon-outline"
-        width="100px"
-        height="100px"
-        viewBox="0 0 100 100"
-      >
+    <router-link
+      v-else
+      :to="to"
+      class="button-circle inverted router-link w-8 h-8 md:w-16 md:h-16"
+    >
+      <svg class="circle-svg button-icon-outline" viewBox="0 0 100 100">
         <circle
           class="circle"
           cx="50"
           cy="50"
-          r="48.8"
+          r="48"
           fill="none"
-          stroke="white"
+          stroke="#dbdbdb"
           stroke-width="1.2"
           vector-effect="non-scaling-stroke"
         ></circle>
@@ -103,8 +101,8 @@ export default {
   display: inline-block;
   height: 2rem;
   background: 0 0;
-  border-right: 1px solid $white-opacity;
-  border-left: 1px solid $white-opacity;
+  border-right: 1px solid $white-primary;
+  border-left: 1px solid $white-primary;
   padding: 0;
   z-index: 0;
   text-transform: uppercase;
@@ -115,7 +113,7 @@ export default {
     content: "";
     position: absolute;
     height: 1px;
-    background: $white-opacity;
+    background: $white-primary;
     left: 0;
     right: 0;
     transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1) 50ms;
@@ -166,25 +164,24 @@ export default {
   &.active {
     opacity: 1;
     .button-rectangle {
-      border-right: 1px solid $white;
-      border-left: 1px solid $white;
+      border-right: 1px solid $white-primary;
+      border-left: 1px solid $white-primary;
       .button-outline-copy:after,
       .button-outline-copy:before,
       .button-outline-bottom::after,
       .button-outline-bottom:before {
-        background: $white;
+        background: $white-primary;
       }
     }
   }
 }
 .button-circle {
+  cursor: pointer;
   position: relative;
   display: inline-block;
   padding: 0;
   z-index: 0;
   display: block;
-  height: 4rem;
-  width: 4rem;
   opacity: 1 !important;
   .circle-svg {
     height: 100%;
@@ -193,12 +190,20 @@ export default {
     top: 0;
     left: 0;
     position: absolute;
+    @include tablet {
+      height: 100%;
+      width: 100%;
+    }
   }
   .circle {
-    stroke-dasharray: 80 15;
-    stroke-dashoffset: 26;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
     stroke-width: 2px;
     transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    @include tablet {
+      stroke-dasharray: 80 15;
+      stroke-dashoffset: 26;
+    }
   }
   &:hover .circle {
     stroke-dashoffset: 111;
