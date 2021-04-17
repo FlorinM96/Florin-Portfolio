@@ -82,7 +82,6 @@ export default {
 <style lang="scss" scoped>
 .the-sidebar {
   overflow: hidden;
-  background: $bg-black;
 }
 .home {
   transition: background 0.25s;

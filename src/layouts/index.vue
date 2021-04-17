@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col md:flex-row">
+  <section ref="layout" class="flex flex-col md:flex-row">
     <the-sidebar />
     <the-menu />
     <section class="main">
@@ -21,12 +21,19 @@ import TheSidebar from "@/components/TheSidebar.vue";
 import TheHeader from "@/components/TheHeader.vue";
 import TheMenu from "@/components/TheMenu";
 import TheFooter from "@/components/TheFooter";
+import * as animator from "@/assets/animations.js";
 export default {
   components: {
     TheSidebar,
     TheHeader,
     TheMenu,
     TheFooter,
+  },
+  mounted() {
+    const context = animator.createBackgroundContext(document.body);
+    context.init();
+    context.animate();
+    // console.log(context);
   },
 };
 </script>

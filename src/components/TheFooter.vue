@@ -65,6 +65,10 @@ export default {
   data: () => ({
     routes: [
       {
+        name: "Home",
+        to: "/",
+      },
+      {
         name: "About",
         to: "/about",
       },
