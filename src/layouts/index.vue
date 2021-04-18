@@ -4,8 +4,7 @@
     <the-menu />
     <section class="main">
       <the-header v-if="$mq === 'desktop'" />
-      <!-- to remove padding -->
-      <section class="p-6 md:p-8">
+      <section>
         <router-view v-slot="{ Component }">
           <transition name="fade" mode="out-in">
             <component :is="Component"></component>
