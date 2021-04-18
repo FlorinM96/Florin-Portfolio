@@ -8,7 +8,7 @@
     >
       {{ preTitle }}
     </h5>
-    <h5 v-if="title" class="title font-heading-s md:font-heading-s">
+    <h5 v-if="title" class="title font-heading-m md:font-heading-l">
       {{ title }}
     </h5>
     <p v-if="description" class="description">{{ description }}</p>
