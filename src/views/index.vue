@@ -1,5 +1,9 @@
 <template>
   <div class="font-heading-s">
+    <app-header
+      pre-title="Lorem ipsum dolor"
+      title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    />
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -142,7 +146,10 @@
 </template>
 
 <script>
-export default {};
+import AppHeader from "../components/AppHeader.vue";
+export default {
+  components: { AppHeader },
+};
 </script>
 
 <style></style>
