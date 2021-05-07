@@ -6,12 +6,12 @@
       :class="`text-${size}`"
       @click="$emit('click')"
     >
-      <span class="button-outline-copy"> {{ text }} </span>
+      <span class="button-outline-copy font-button"> {{ text }} </span>
       <span class="button-outline-bottom"></span>
     </div>
     <router-link v-else :to="to" class="router-link">
       <div :class="`text-${size}`" class="button-rectangle inverted">
-        <span class="button-outline-copy"> {{ text }} </span>
+        <span class="button-outline-copy font-button"> {{ text }} </span>
         <span class="button-outline-bottom"></span>
       </div>
     </router-link>

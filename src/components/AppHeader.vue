@@ -4,7 +4,7 @@
   >
     <h5
       v-if="preTitle"
-      class="pre-title mb-4 font-subtitle-s md:font-subtitle-m"
+      class="pre-title mb-4 font-subtitle-s md:font-overline-m"
     >
       {{ preTitle }}
     </h5>

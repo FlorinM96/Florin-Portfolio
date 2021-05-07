@@ -1,9 +1,10 @@
 $white: #fff;
 $white-primary: #dbdbdb;
+$white-opacity: rgba(#fff, 0.2);
 $black: #000000;
 $bg-black: #171717;
 
-$white-opacity: rgba(#fff, 0.2);
+$border: 1px solid $white-opacity;
 
 @mixin tablet {
   @media screen and (min-width: 720px) {

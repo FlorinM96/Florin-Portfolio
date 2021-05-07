@@ -97,7 +97,7 @@ export default {
 <style lang="scss" scoped>
 .details-wrapper,
 .copyright-wrapper {
-  border-top: 1px solid $white-opacity;
+  border-top: $border;
 }
 .details {
   display: flex;
